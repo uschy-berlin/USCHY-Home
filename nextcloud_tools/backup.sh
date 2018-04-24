@@ -1,6 +1,6 @@
 #!/bin/bash
 CURRENT_TIME_FORMAT="%d.%m.%Y"
-BACKUP_FOLDER=/home/uschitkowsky/backup
+BACKUP_FOLDER=/backup
 FOLDERS_TO_BACKUP=(
    "/root/"
    "/etc/apticron/"
@@ -52,9 +52,10 @@ rm $BACKUP_FOLDER/nextcloud.sql.gz
 # rm $BACKUP_FOLDER/wordpress.sql.gz
 rm $BACKUP_FOLDER/etc/fstab
 echo "Delete backups older than 5 days..."
-ls -1 -S --sort=time $BACKUP_FOLDER | tail -n +6 | xargs rm
+#ls -1 -S --sort=time $BACKUP_FOLDER | tail -n +6 | xargs rm
+find $BACKUP_FOLDER -maxdepth 1 -mtime +5 -type f -exec rm {} \;
 echo "-------------------------------------"
 echo "END: $(date)"
 echo "-------------------------------------"
-mail -s "Backup - $(date +$CURRENT_TIME_FORMAT)" -a "From: Webmaster <webmaster@schitkowsky.de>" webmaster@schitkowsky.de < /home/uschitkowsky/backup.txt
+mail -s "Backup - $(date +$CURRENT_TIME_FORMAT)" -a "From: Webmaster <webmaster@schitkowsky.de>" webmaster@schitkowsky.de < $BACKUP_FOLDER/backup.txt
 exit 0
