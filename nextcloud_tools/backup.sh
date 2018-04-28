@@ -54,6 +54,8 @@ rm $BACKUP_FOLDER/etc/fstab
 echo "Delete backups older than 5 days..."
 #ls -1 -S --sort=time $BACKUP_FOLDER | tail -n +6 | xargs rm
 find $BACKUP_FOLDER -maxdepth 1 -mtime +5 -type f -exec rm {} \;
+echo Plattenplatz backup Verzeichnis: %verwendet, GB frei
+df -h --output=target,pcent,avail | grep backup
 echo "-------------------------------------"
 echo "END: $(date)"
 echo "-------------------------------------"
