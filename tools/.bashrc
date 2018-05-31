@@ -93,7 +93,23 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # USCHY 31.5.2018
-case `lsb_release -ds 2>/dev/null | awk '{ print $1 }' || cat /etc/*release 2>/dev/null | head -n1 | awk '{ print $2 }' || uname -om` in
+#set -x
+set_distro(){
+  if [[ -e /etc/redhat-release ]]
+    then
+      DISTRO=$(cat /etc/redhat-release | awk '{ print $2 }')
+    elif [[ -e /usr/bin/lsb_release ]]
+    then
+      DISTRO=$(lsb_release -d | awk -F ':' '{print $2}')
+    elif [[ -e /etc/issue ]]
+    then
+      DISTRO=$(cat /etc/issue)
+    else
+      DISTRO=$(cat /proc/version)
+    fi
+}
+set_distro
+case $DISTRO in
   Hat )
     #Red Hat
     alias update='sudo yum -y update && sudo yum -y upgrade'
@@ -114,6 +130,7 @@ case `lsb_release -ds 2>/dev/null | awk '{ print $1 }' || cat /etc/*release 2>/d
     echo "Fehler beim Set der Aliasse"
     ;;
 esac
+#set +x
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
