@@ -93,7 +93,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # USCHY 31.5.2018
-case 'lsb_release -ds 2>/dev/null | awk '{ print $1 }' || cat /etc/*release 2>/dev/null | head -n1 | awk '{ print $2 }' || uname -om'
+case `lsb_release -ds 2>/dev/null | awk '{ print $1 }' || cat /etc/*release 2>/dev/null | head -n1 | awk '{ print $2 }' || uname -om` in
   Hat )
     #Red Hat
     alias update='sudo yum -y update && sudo yum -y upgrade'
