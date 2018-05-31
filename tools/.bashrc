@@ -92,7 +92,28 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 
-alias update='sudo apt-get update && sudo apt-get -y upgrade'
+# USCHY 31.5.2018
+case 'lsb_release -ds 2>/dev/null | awk '{ print $1 }' || cat /etc/*release 2>/dev/null | head -n1 | awk '{ print $2 }' || uname -om'
+  Hat )
+    #Red Hat
+    alias update='sudo yum -y update && sudo yum -y upgrade'
+    alias updatedist='sudo yum -y distribution-synchronization full'
+    alias updateautorem='sudo yum -y autoremove'
+    ;;
+  Debian )
+    alias update='sudo apt-get -y update && sudo apt-get -y upgrade'
+    alias updatedist='sudo apt-get -y dist-upgrade'
+    alias updateautorem='sudo apt-get -y autoremove'
+    ;;
+  Ubuntu )
+    alias update='sudo apt-get -y update && sudo apt-get -y upgrade'
+    alias updatedist='sudo apt-get -y dist-upgrade'
+    alias updateautorem='sudo apt-get -y autoremove'
+    ;;
+  * )
+    echo "Fehler beim Set der Aliasse"
+    ;;
+esac
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
