@@ -93,7 +93,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # USCHY 31.5.2018
-set -x
+#set -x
 set_distro(){
   if [[ -e /etc/redhat-release ]]
     then
@@ -131,7 +131,7 @@ case $DISTRO in
     echo "Fehler beim Set der Aliasse"
     ;;
 esac
-set +x
+#set +x
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
