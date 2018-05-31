@@ -93,14 +93,15 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # USCHY 31.5.2018
-#set -x
+set -x
 set_distro(){
   if [[ -e /etc/redhat-release ]]
     then
-      DISTRO=$(cat /etc/redhat-release | awk '{ print $2 }')
+      DISTRO=$(cat /etc/redhat-release 2>/dev/null | awk '{ print $2 }')
     elif [[ -e /usr/bin/lsb_release ]]
     then
-      DISTRO=$(lsb_release -d | awk -F ':' '{print $2}')
+      DISTRO=$(lsb_release -ds 2>/dev/null | awk '{ print $1 }')
+      #DISTRO=$(lsb_release -ds | awk -F ':' '{print $2}')
     elif [[ -e /etc/issue ]]
     then
       DISTRO=$(cat /etc/issue)
@@ -130,7 +131,7 @@ case $DISTRO in
     echo "Fehler beim Set der Aliasse"
     ;;
 esac
-#set +x
+set +x
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
