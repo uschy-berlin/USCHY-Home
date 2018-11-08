@@ -1,0 +1,12 @@
+[hosts]
+  uschy10.fritz.box
+  uschy11.fritz.box
+  uschy12.fritz.box
+  uschy13.fritz.box
+  uschy14.fritz.box
+
+[backup]
+  uschy14.fritz.box
+
+[fileserver]
+  uschy13.fritz.box

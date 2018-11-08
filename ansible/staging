@@ -1,0 +1,17 @@
+[hosts]
+  uschy11.fritz.box
+  uschy14.fritz.box
+  vcsa.fritz.box
+  uschytest.fritz.box
+
+[backup]
+  uschy14.fritz.box
+
+[esxiserver]
+  uschy11.fritz.box
+
+[vcenter]
+  vcsa.fritz.box
+
+[testserver]
+  uschytest.fritz.box
