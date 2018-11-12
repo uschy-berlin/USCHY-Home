@@ -18,9 +18,26 @@
 
 ---
 <h2>Directory Structure</h2>
-/home/ansible/USCHY-Home/ansible
-hosts - Inventory
-*.yml - Playbooks
-README.md - this file
-templates - Jinja2 Templates
-div. Directories - roles for ansible
+<table>
+  <thead>
+    <tr>
+      <th>Verzeichnis/Datei</th>
+      <th>Zweck</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>/home/ansible/USCHY-Home/ansible</td>
+      <td>home Verzeichnis</td>
+      <td>hosts</td>
+      <td>Inventory</td>
+      <td>*.yml</td>
+      <td>Playbooks</td>
+      <td>README.md</td>
+      <td>this file</td>
+      <td>templates</td>
+      <td>Jinja2 Templates</td>
+      <td>div. Directories</td>
+      <td>roles for ansible</td> 
+    </tr>
+</table>
