@@ -1,5 +1,5 @@
-Alle Files und Scripts für die Ansible Umgebung bei USCHY@Home
-==============================================================
+<h1>Alle Files und Scripts für die Ansible Umgebung bei USCHY@Home</h1>
+
 <table>
   <thead>
     <tr>
@@ -15,9 +15,9 @@ Alle Files und Scripts für die Ansible Umgebung bei USCHY@Home
       <td>ansible-vmware_vm_provisioning</td>
     </tr>
 </table>
------
-Directory Structure
-+++++++++++++++++++
+
+---
+<h2>Directory Structure</h2>
 /home/ansible/USCHY-Home/ansible
 hosts - Inventory
 *.yml - Playbooks
