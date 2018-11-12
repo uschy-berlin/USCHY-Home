@@ -28,7 +28,7 @@
   <tbody>
     <tr>
       <td>/home/ansible/USCHY-Home/ansible</td>
-      <td>*home Verzeichnis*</td>
+      <td><em>home Verzeichnis</em></td>
     </tr>
     <tr>
       <td>hosts</td>
