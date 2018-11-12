@@ -28,26 +28,26 @@
   <tbody>
     <tr>
       <td>/home/ansible/USCHY-Home/ansible</td>
-      <td>home Verzeichnis</td>
+      <td>*home Verzeichnis*</td>
     </tr>
     <tr>
       <td>hosts</td>
-      <td>Inventory</td>
+      <td>*Inventory*</td>
     </tr>
     <tr>
       <td>*.yml</td>
-      <td>Playbooks</td>
+      <td>*Playbooks*</td>
     </tr>
     <tr>
       <td>README.md</td>
-      <td>this file</td>
+      <td>*this file*</td>
     </tr>
     <tr>
       <td>templates</td>
-      <td>Jinja2 Templates</td>
+      <td>*Jinja2 Templates*</td>
     </tr>
     <tr>
       <td>div. Directories</td>
-      <td>roles for ansible</td> 
+      <td>*roles for ansible*</td> 
     </tr>
 </table>
