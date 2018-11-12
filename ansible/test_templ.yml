@@ -1,0 +1,11 @@
+---
+- name: advanced template test
+  hosts: testserver
+  tasks:
+  - name: template vhost file
+    template:
+      src: templates/ansible_managed.j2
+      dest: /home/ansible/advanced_template.out
+      owner: ansible
+      group: ansible
+      mode: 0644
