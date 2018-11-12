@@ -32,22 +32,22 @@
     </tr>
     <tr>
       <td>hosts</td>
-      <td>*Inventory*</td>
+      <td><em>Inventory</em></td>
     </tr>
     <tr>
       <td>*.yml</td>
-      <td>*Playbooks*</td>
+      <td><em>Playbooks</em></td>
     </tr>
     <tr>
       <td>README.md</td>
-      <td>*this file*</td>
+      <td><em>this file</em></td>
     </tr>
     <tr>
       <td>templates</td>
-      <td>*Jinja2 Templates*</td>
+      <td><em>Jinja2 Templates</em></td>
     </tr>
     <tr>
       <td>div. Directories</td>
-      <td>*roles for ansible*</td> 
+      <td><em>roles for ansible</em></td> 
     </tr>
 </table>
