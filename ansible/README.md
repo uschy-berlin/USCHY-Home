@@ -11,6 +11,11 @@
   <tbody>
     <tr>
       <td> samba</td>
+      <td> </td>
+      <td>urbackup</td>
+    </tr>
+    <tr>
+      <td> </td>
       <td>common</td>
       <td>ansible-vmware_vm_provisioning</td>
     </tr>
