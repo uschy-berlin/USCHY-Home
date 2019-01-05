@@ -1,4 +1,5 @@
 [hosts]
+  uschy10.fritz.box
   uschy11.fritz.box
   uschy12.fritz.box
   uschy13.fritz.box
@@ -6,26 +7,34 @@
   vcsa.fritz.box
   uschytest.fritz.box
 
-[backup]
+[backupserver]
   uschy14.fritz.box
+
+[cloudserver]
+  uschy10.fritz.box
+  uschy12.fritz.box
 
 [esxiserver]
   uschy11.fritz.box
 
-[vcenter]
-  vcsa.fritz.box
-
 [fileserver]
-  uschy13.fritz.box
-
-[cloudserver]
-  uschy12.fritz.box
-
-[printserver]
   uschy13.fritz.box
 
 [musicserver]
   uschy13.fritz.box
 
+[printserver]
+  uschy13.fritz.box
+
 [testserver]
   uschytest.fritz.box
+
+[vcenter]
+  vcsa.fritz.box
+
+[production:children]
+  backupserver
+  cloudserver
+  fileserver
+  musicserver
+  printserver

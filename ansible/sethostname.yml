@@ -1,0 +1,11 @@
+---
+# set the {{ hostname }} on {{ host }} and add {{ host }} to /etc/hosts on {{ host }}
+# example: ansible-playbook sethostname.yml --extra-vars "host=testserver hostname=newname" --tags sethostname
+#
+- name: set hostname for host to hostname
+  hosts: "{{ host }}"
+  vars: 
+    hostname: "{{ hostname }}"
+  become: true
+  roles:
+    - common         
