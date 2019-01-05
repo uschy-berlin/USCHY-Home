@@ -15,8 +15,8 @@
       <td>urbackup</td>
     </tr>
     <tr>
-      <td> </td>
       <td>common</td>
+      <td> </td>
       <td>ansible-vmware_vm_provisioning</td>
     </tr>
 </table>
