@@ -1,0 +1,5 @@
+---
+- hosts: testserver
+  become: yes
+  roles:
+    - samba

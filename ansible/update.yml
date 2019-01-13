@@ -1,0 +1,9 @@
+---
+# do apt upgrade or autoremove on {{ host }}
+# example: ansible-playbook update.yml --extra-vars "host=testserver" --tags autorem
+#
+- name: update or autoremove on host
+  hosts: "{{ host }}"
+  become: true
+  roles:
+    - common         

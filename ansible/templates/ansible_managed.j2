@@ -1,0 +1,19 @@
+### {{ ansible_managed }}
+
+### My host name
+My non-FQDN hostname is {{ ansible_hostname }}.
+
+### Where host2 is
+Host2 IP is: {{ hostvars['uschytest.fritz.box']['ansible_default_ipv4']['address'] }}
+
+### What else is here?
+The machines in group testserver are:
+{% for host in groups['testserver'] %}
+- {{ hostvars[host]['inventory_hostname'] }}
+
+{% if host is match('uschytest.fritz.box') %}
+uschytest.fritz.boxMEM: {{ ansible_memfree_mb }}
+{% endif %}
+{% endfor %}
+
+We also support external lookups: {{ lookup('dig', 'ubuntu.com./MX') }}
