@@ -4,8 +4,14 @@
   uschy12.fritz.box
   uschy13.fritz.box
   uschy14.fritz.box
+  uschy30.fritz.box
+  uschy31.fritz.box
   vcsa.fritz.box
   uschytest.fritz.box
+
+[atomichosts]
+  uschy30.fritz.box
+  uschy31.fritz.box
 
 [backupserver]
   uschy14.fritz.box
@@ -33,6 +39,7 @@
   vcsa.fritz.box
 
 [production:children]
+  atomichosts
   backupserver
   cloudserver
   fileserver

@@ -1,2 +1,14 @@
 ---
 # tasks file for urbackup
+#
+- name: add PPA for urbackup
+  apt_repository:
+    repo: "{{ urbackup_repo }}"
+    state: present
+    update_cache: true
+
+- name: install urbackup 
+  apt: 
+    name: urbackup-server
+    state: latest
+

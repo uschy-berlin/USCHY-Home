@@ -1,0 +1,6 @@
+atomic install --system \
+    --storage=ostree \
+    --set INVENTORY_FILE=/home/ansible/openshift_inventory \ 
+    --set PLAYBOOK_FILE=/usr/share/ansible/openshift-ansible/playbooks/prerequisites.yml \
+    --set OPTS="-v" \
+    registry.redhat.io/openshift3/ose-ansible:v3.11

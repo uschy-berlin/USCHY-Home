@@ -1,12 +1,15 @@
 ---
 # tasks file for common
-# update tasks file for role common    
-- name: Update all packages
-  include_tasks: '{{ item }}'
-  with_first_found:
-    - '{{ ansible_distribution }}update.yml'
-    - '{{ ansible_os_family }}update.yml'
+# update tasks file for role common
+- name: Update all packages to the latest version
+  apt:
+    upgrade: dist
   tags: update
+
+- name: remove all unused packages
+  apt:
+    autoremove: yes
+  tags: autorem
 
 # set hostname to {{ hostname }}
 - name: set hostname to hostname

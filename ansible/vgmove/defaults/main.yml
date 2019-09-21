@@ -1,0 +1,6 @@
+---
+# defaults file for vgmove
+#
+# vg_name of the vg to be moved to another machine
+vg_name: vg_backup
+filesystem_name: /data/backup

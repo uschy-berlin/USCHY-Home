@@ -1,0 +1,9 @@
+---
+# install urbackup server on {{ host }}
+# example: ansible-playbook urbackup.yml --extra-vars "host=backup"
+#
+- name: install urbackup on host
+  hosts: "{{ host }}"
+  become: true
+  roles:
+    - urbackup         

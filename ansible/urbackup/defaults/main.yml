@@ -1,2 +1,9 @@
 ---
 # defaults file for urbackup
+#
+urbackup_version: latest
+urbackup_repo: ppa:uroni/urbackup
+urbackup_user: urbackup
+urbackup_download_url: http://urbackup.org                                                                                                                                                                                          
+download_dest: /tmp                                                                                                                                                                                                                 
+file_mode: 0440    

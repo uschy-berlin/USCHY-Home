@@ -1,0 +1,3 @@
+#neue Platte ins System einbinden
+# sudo echo DEVS=/dev/sdb >> /etc/sysconfig/docker-storage-setup
+# sudo systemctl start docker

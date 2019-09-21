@@ -1,0 +1,9 @@
+[hosts]
+uschy30.fritz.box
+uschy31.fritz.box
+
+[master]
+uschy30.fritz.box
+
+[nodes]
+uschy31.fritz.box
