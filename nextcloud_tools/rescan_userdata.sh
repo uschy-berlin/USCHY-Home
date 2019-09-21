@@ -87,7 +87,7 @@ touch $LOCK_FILE
 # -----------------------------------------------------------------
 
 cd /var/www/nextcloud
-sudo -u www-data php occ file:scan $OPTFILE -v
+sudo -u www-data php occ files:scan $OPTFILE -v
 exit $EXIT_SUCCESS
 
 
