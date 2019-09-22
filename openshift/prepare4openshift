@@ -5,7 +5,7 @@ sudo subscription-manager refresh
 #sudo subscription-manager list --available --matches '*OpenShift*'  #to get the pool id
 sudo subscription-manager attach --pool=8a85f999684cf75e016879b767c0134b
 sudo subscription-manager repos --disable="*"
-subscription-manager repos \
+sudo subscription-manager repos \
     --enable="rhel-7-server-rpms" \
     --enable="rhel-7-server-extras-rpms" \
     --enable="rhel-7-server-ose-3.11-rpms" \
