@@ -1,9 +1,15 @@
 ---
 # do apt upgrade on {{ host }}
-# example: ansible-playbook update.yml --extra-vars "host=testserver" --tags update
-#
-- name: update on host
+# example: ansible-playbook --extra-vars "host=testserver atomic=yes|no" update.yml
+# 
+- name: update on {{ host }}
   hosts: "{{ host }}"
-  become: true
+  become: yes
   roles:
-    - common         
+    - robertdebock.update
+
+- name: update for atomic hosts
+  hosts: atomichosts
+  become: yes
+  roles: 
+    - uschy.atomic.update

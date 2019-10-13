@@ -1,0 +1,18 @@
+---
+# Update atomic Hosts 
+- name: update atomic hosts
+  command: atomic host upgrade
+  become: yes
+  become_method: sudo
+  when: 
+    - ansible_pkg_mgr == "atomic_container"
+
+- name: Reboot Atomic host
+  command: sleep 2 && systemctl reboot
+  become: yes
+  become_method: sudo
+  async: 1
+  poll: 0
+  ignore_errors: true
+  when:
+    - ansible_pkg_mgr == "atomic_container"
