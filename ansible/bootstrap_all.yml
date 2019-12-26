@@ -1,5 +1,5 @@
 ---
-- name: bootstrap on {{ hosts }}
+- name: bootstrap on {{ host }}
   hosts: "{{ host }}"
   become: yes
   gather_facts: no

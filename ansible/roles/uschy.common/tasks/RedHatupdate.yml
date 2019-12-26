@@ -1,8 +1,0 @@
----
-- name: Upgrade all packages
-  block:
-    - name: Install deltarpm
-      yum: name=deltarpm state=present
-    - name: Update all packages
-      yum: name=* state=present update_cache=yes
-  become: true

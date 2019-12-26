@@ -1,11 +1,11 @@
 [hosts]
-  uschy10.fritz.box
   uschy11.fritz.box
   uschy12.fritz.box
   uschy13.fritz.box
   uschy14.fritz.box
   uschy30.fritz.box
   uschy31.fritz.box
+  uschy100.fritz.box
   vcsa.fritz.box
   uschytest.fritz.box
 
@@ -18,7 +18,7 @@
   uschy14.fritz.box
 
 [cloudserver]
-  uschy10.fritz.box
+  uschy100.fritz.box
   uschy12.fritz.box
 
 [esxiserver]
