@@ -1,0 +1,131 @@
+[main]
+rcversion = 3.1.0
+dbpath = /usr/local/dupReport
+logpath = /usr/local/dupReport
+verbose = 5
+logappend = false
+subjectregex = ^Duplicati Backup report for
+srcregex = \w+
+destregex = \w+
+srcdestdelimiter = -
+dateformat = MM/DD/YYYY
+timeformat = HH:MM:SS
+warnoncollect = false
+applyutcoffset = true
+show24hourtime = true
+purgedb = false
+showprogress = 0
+masksensitive = true
+emailservers = incoming, outgoing
+syslog = 
+sysloglevel = 5
+
+[incoming]
+protocol = imap
+server = imap.1und1.de
+port = 993
+encryption = tls
+account = duplicati@schitkowsky.de
+password = 9?mz((:4pnp%{WDQ^t7$7S[w
+folder = INBOX
+keepalive = false
+unreadonly = false
+markread = false
+authentication = basic
+
+[outgoing]
+server = smtp.1und1.de
+port = 587
+encryption = tls
+account = duplicati@schitkowsky.de
+password = 9?mz((:4pnp%{WDQ^t7$7S[w
+keepalive = false
+sender = duplicati@schitkowsky.de
+sendername = Duplicati
+receiver = webmaster@schitkowsky.de
+authentication = basic
+protocol = smtp
+
+[report]
+layout = srcdest, noactivity, lastseen
+columns = source:Source, destination:Destination, date:Date, time:Time, duration:Duration, dupversion:Version, examinedFiles:Files, examinedFilesDelta:+/-, sizeOfExaminedFiles:Size, fileSizeDelta:+/-, addedFiles:Added, deletedFiles:Deleted, modifiedFiles:Modified, filesWithError:File Errors, parsedResult:Result, messages:Messages, warnings:Warnings, errors:Errors, logdata:Log Data
+title = Duplicati Backup Summary Report
+titlebg = #FFFFFF
+border = 1
+padding = 5
+sizedisplay = byte
+repeatcolumntitles = true
+suppresscolumntitles = false
+durationzeroes = true
+displaymessages = false
+jobmessagebg = #FFFFFF
+displaywarnings = true
+jobwarningbg = #FFFF00
+displayerrors = true
+joberrorbg = #FF0000
+displaylogdata = true
+truncatemessage = 0
+truncatewarning = 0
+truncateerror = 0
+truncatelogdata = 0
+joblogdatabg = #FF0000
+nobackupwarn = 0
+nbwsubject = Backup Warning: #SOURCE##DELIMITER##DESTINATION# Backup Not Seen for #DAYS# Days
+groupheadingbg = #D3D3D3
+normaldays = 5
+normalbg = #FFFFFF
+warningdays = 20
+warningbg = #FFFF00
+errorbg = #FF0000
+weminline = false
+includeruntime = true
+failedonly = False
+showoffline = False
+
+[srcdest]
+type = report
+title = Duplicati Backup Summary Report - By Source/Destination
+groupby = source:ascending, destination:ascending
+groupheading = Source: #SOURCE# - Destination: #DESTINATION#
+columns = date:Date, time:Time, dupversion:Version, duration:Duration, examinedFiles:Files, examinedFilesDelta:+/-, sizeOfExaminedFiles:Size, fileSizeDelta:+/-, addedFiles:Added, deletedFiles:Deleted, modifiedFiles:Modified, parsedResult:Result, messages:Messages, warnings:Warnings, errors:Errors, logdata:Log Data
+columnsort = date:ascending, time:ascending
+
+[bysrc]
+type = report
+title = Duplicati Backup Summary Report - By Source
+groupby = source : ascending
+groupheading = Source: #SOURCE#
+columns = destination:Destiation, date:Date, time:Time, dupversion:Version, duration:Duration, examinedFiles:Files, examinedFilesDelta:+/-, sizeOfExaminedFiles:Size, fileSizeDelta:+/-, addedFiles:Added, deletedFiles:Deleted, modifiedFiles:Modified, parsedResult:Result, messages:Messages, warnings:Warnings, errors:Errors, logdata:Log Data
+columnsort = destination:ascending, date:ascending, time:ascending
+
+[bydest]
+type = report
+title = Duplicati Backup Summary Report - By Destination
+groupby = destination:ascending
+groupheading = Destination: #DESTINATION#
+columns = source:Source, date:Date, time:Time, dupversion:Version, duration:Duration, examinedFiles:Files, examinedFilesDelta:+/-, sizeOfExaminedFiles:Size, fileSizeDelta:+/-, addedFiles:Added, deletedFiles:Deleted, modifiedFiles:Modified, parsedResult:Result, messages:Messages, warnings:Warnings, errors:Errors, logdata:Log Data
+columnsort = source:ascending, date:ascending, time:ascending
+
+[bydate]
+type = report
+title = Duplicati Backup Summary Report - By Date
+groupby = date:ascending
+groupheading = Date: #DATE#
+columns = time:Time, source:Source, destination:Destination, dupversion:Version, duration:Duration, examinedFiles:Files, examinedFilesDelta:+/-, sizeOfExaminedFiles:Size, fileSizeDelta:+/-, addedFiles:Added, deletedFiles:Deleted, modifiedFiles:Modified, parsedResult:Result, messages:Messages, warnings:Warnings, errors:Errors, logdata:Log Data
+columnsort = time:ascending
+
+[noactivity]
+type = noactivity
+title = Non-Activity Report
+
+[lastseen]
+type = lastseen
+title = Backup Sets Last Seen
+
+[apprise]
+enabled = false
+services = 
+bodytruncate = 0
+msglevel = warning
+body = Completed at #COMPLETETIME#: #RESULT# - Warning: #WARNMSG# Error: #ERRMSG#
+

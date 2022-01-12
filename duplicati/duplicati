@@ -7,4 +7,4 @@
 #
 
 # Additional options that are passed to the Daemon.
-DAEMON_OPTS="--webservice-interface=any --webservice-port=8200 --portable-mode"
+DAEMON_OPTS="--webservice-interface=any --webservice-port=8200 --portable-mode --webservice-allowed-hostnames=*"
