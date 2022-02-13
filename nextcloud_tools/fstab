@@ -1,0 +1,21 @@
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+# / was on /dev/ubuntu-vg/ubuntu-lv during curtin installation
+/dev/disk/by-id/dm-uuid-LVM-Ujf2g7k025allTnf54Va8bkQh9t8M2rpyOs7jVTdXnD2cNHO8kaFGEAOBQhP8sa5 / ext4 defaults 0 0
+# /boot was on /dev/sda2 during curtin installation
+/dev/disk/by-uuid/f1fd192d-bbd3-490b-9911-f06a55b43810 /boot ext4 defaults 0 0
+# /boot/efi was on /dev/sda1 during curtin installation
+/dev/disk/by-uuid/6658-C931 /boot/efi vfat defaults 0 0
+/swap.img	none	swap	sw	0	0
+/dev/vg_data/lv_data1 /mnt/data ext4 defaults 0 0
+/dev/vg_data/lv_bckp_tm /mnt/backup/tm ext4 defaults 0 0
+/dev/vg_data/lv_bckp_data /mnt/backup/data ext4 defaults 0 0
+/dev/vg_data/lv_archiv-master /mnt/wo-mirror-disk ext4 defaults 0 0
+/mnt/data/pictures /mnt/data/nc_data/__groupfolders/1 none bind
+/mnt/data/video /mnt/data/nc_data/__groupfolders/2 none bind
+/mnt/data/music /mnt/data/nc_data/__groupfolders/3 none bind
